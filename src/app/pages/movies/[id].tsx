@@ -11,19 +11,19 @@ export default function MovieDetails({ movie, credits, recommendations }: any) {
             <Image src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} width={400} height={600} />
             <h1>{movie.title}</h1>
             <p>{movie.overview}</p>
-            <p>Genres: {movie.genres.map((g) => g.name).join(', ')}</p>
+            <p>Genres: {movie.genres.map((g: { name: string; }) => g.name).join(', ')}</p>
             <p>Release Date: {movie.release_date}</p>
 
             <h2>Cast:</h2>
             <ul>
-                {credits.cast.map((actor) => (
+                {credits.cast.map((actor: any) => (
                     <li key={actor.id}>{actor.name}</li>
                 ))}
             </ul>
 
             <h2>Recommendations:</h2>
             <ul>
-                {recommendations.results.map((rec) => (
+                {recommendations.results.map((rec: any) => (
                     <li key={rec.id}>{rec.title}</li>
                 ))}
             </ul>
@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`);
     const movies = response.data.results;
 
-    const paths = movies.map((movie) => ({
+    const paths = movies.map((movie: any) => ({
         params: { id: movie.id.toString() },
     }));
 

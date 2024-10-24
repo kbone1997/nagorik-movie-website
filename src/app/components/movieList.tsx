@@ -1,7 +1,7 @@
 // components/MovieList.tsx
 import { useState, useEffect } from 'react';
 import { useFetchMovies } from '../hooks/useFetchMovies';
-import MovieCard from './MovieCard';
+import MovieCard from './movieCard';
 
 const MovieList = ({ searchQuery }: { searchQuery?: string }) => {
     const { movies, loading, error, setPage } = useFetchMovies(searchQuery);
@@ -22,7 +22,7 @@ const MovieList = ({ searchQuery }: { searchQuery?: string }) => {
     return (
         <div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {movies.map((movie) => (
+                {movies.map((movie: any) => (
                     <MovieCard key={movie.id} movie={movie} />
                 ))}
             </div>

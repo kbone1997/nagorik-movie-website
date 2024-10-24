@@ -1,7 +1,8 @@
 // pages/index.tsx
+"use client"
 import { useState } from 'react';
-import SearchBar from '../components/SearchBar';
-import MovieList from '../components/MovieList';
+import SearchBar from './components/searchBar';
+import MovieList from './components/movieList';
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");

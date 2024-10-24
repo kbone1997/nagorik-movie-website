@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const MovieCard = ({ movie }: any) => {
     return (
-        <Link href={`/movies/${movie.id}`}>
+        <Link href={`/pages/movies/${movie.id}`}>
             <div className="movie-card">
                 <Image
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
