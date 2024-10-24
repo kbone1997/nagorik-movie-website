@@ -8,7 +8,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div>
+    <div className='pl-[10%] pr-[10%] mt-[2%]'>
       <SearchBar setSearchQuery={setSearchQuery} />
       <MovieList searchQuery={searchQuery} />
     </div>
