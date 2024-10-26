@@ -10,7 +10,7 @@ const SearchBar = ({ setSearchQuery }: any) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex items-center justify-center gap-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex items-center justify-center gap-2 pt-[2%]">
             <input
                 type="text"
                 placeholder="Search for movies..."

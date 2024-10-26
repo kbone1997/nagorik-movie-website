@@ -6,8 +6,8 @@ import { useState } from 'react';
 const MovieCard = ({ movie }: any) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
-        <Link href={`pages/movies/${movie.id}`}>
-            <div className={`flex flex-col items-center justify-center border-4`}
+        <Link href={`/pages/movies/${movie.id}`}>
+            <div className={`flex flex-col items-center justify-center w-[250px] h-[350px]`}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}>
                 <Image
