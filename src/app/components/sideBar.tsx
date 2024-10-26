@@ -35,7 +35,7 @@ const Sidebar = () => {
                                 <Link href="/" className="p-4 hover:bg-gray-700">
                                     Home
                                 </Link>
-                                <Link href="/watchList" className="p-4 hover:bg-gray-700">
+                                <Link href="/pages/watchList" className="p-4 hover:bg-gray-700">
                                     Wishlist
                                 </Link>
                             </nav>
