@@ -41,7 +41,10 @@ export default function MovieDetails({ params }: { params: { id: string } }) {
 
                 {/* Movie Info */}
                 <div className='flex flex-col gap-4 text-sm lg:text-base'>
-                    <h1 className='text-2xl lg:text-3xl font-semibold'>{movie.title}</h1>
+                    <div className='flex gap-4 items-center'>
+                        <h1 className='text-2xl lg:text-3xl font-semibold'>{movie.title}</h1>
+                        <button className='bg-orange-400 px-4 h-[50px] rounded-[14px] hover:bg-orange-700'>Add to watchlist</button>
+                    </div>
                     <p className='text-white'>{movie.overview}</p>
                     <p className='flex gap-1'><span className='font-semibold'>Genres:</span> {movie.genres.map((g: { name: string }) => g.name).join(', ')}</p>
                     <p className='flex gap-1'><span className='font-semibold'>Release Date:</span> {movie.release_date}</p>

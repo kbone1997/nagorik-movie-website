@@ -11,16 +11,16 @@ const Sidebar = () => {
 
     return (
         <div
-            className={`h-screen bg-gray-800 text-white fixed transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16' : 'w-64'
+            className={`h-screen bg-gray-800 text-white fixed transition-all duration-300 ease-in-out ${isCollapsed ? 'w-16 h-[65px] rounded-full' : 'w-64'
                 }`}
         >
             {/* Toggle Button */}
             <button
                 onClick={toggleSidebar}
-                className="p-2 bg-gray-700 hover:bg-gray-600 text-sm absolute top-4 right-4 rounded-md"
+                className="p-2 hover:bg-gray-600 text-sm absolute top-4 right-4 rounded-md"
                 aria-label="Toggle sidebar"
             >
-                {isCollapsed ? '>' : '<'}
+                {isCollapsed ? '->' : '<-'}
             </button>
 
             {/* Sidebar Content */}
