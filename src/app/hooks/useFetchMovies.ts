@@ -18,16 +18,25 @@ export const useFetchMovies = (searchQuery?: string) => {
                 : `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`;
 
             const response = await axios.get(url);
-            setMovies((prev: any) => [...prev, ...response.data.results]);
+
+            setMovies((prev: any) =>
+                searchQuery && page === 1 ? response.data.results : [...prev, ...response.data.results]
+            );
         } catch (err) {
             setError("Failed to fetch movies");
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     useEffect(() => {
+        // Reset movies when a new search query is made
+        if (searchQuery) {
+            setMovies([]);
+            setPage(1);
+        }
         fetchMovies();
-    }, [page, searchQuery]);
+    }, [searchQuery, page]);
 
     return { movies, loading, error, setPage };
 };
